@@ -16,6 +16,3 @@ wheels/
 
 # macOS
 .DS_Store
-
-# Generated assets
-outputs/
