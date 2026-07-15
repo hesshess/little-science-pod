@@ -14,15 +14,23 @@ def plan_episode(state: EpisodeState) -> EpisodeState:
     return {"plan": plan}
 
 
-def research_topic(state: EpisodeState) -> EpisodeState:
+def orchestrate_research(state: EpisodeState) -> EpisodeState:
+    return {"plan": f"{state['plan']}\n- Research workflow: fact, vocabulary, and parent tip in parallel"}
+
+
+def fetch_science_fact(state: EpisodeState) -> EpisodeState:
     science_fact = science_fact_tool.invoke({"topic": state["topic"]})
+    return {"science_fact": science_fact}
+
+
+def fetch_vocabulary(state: EpisodeState) -> EpisodeState:
     target_words = vocabulary_tool.invoke({"topic": state["topic"]})
+    return {"target_words": target_words}
+
+
+def fetch_parent_tip(state: EpisodeState) -> EpisodeState:
     parent_tip = parent_tip_tool.invoke({"age_group": state["age_group"]})
-    return {
-        "science_fact": science_fact,
-        "target_words": target_words,
-        "parent_tip": parent_tip,
-    }
+    return {"parent_tip": parent_tip}
 
 
 def write_script(state: EpisodeState) -> EpisodeState:

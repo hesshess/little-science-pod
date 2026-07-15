@@ -18,16 +18,23 @@
 ```mermaid
 graph TD
     A[부모 입력] --> B[에피소드 기획 노드]
-    B --> C[research_topic Tool 호출]
-    C --> D[어린이 과학영어 스크립트 생성]
-    D --> E[사용자 검토]
-    E -->|스크립트 확정| F[부모용 학습 요약]
-    E -->|수정 요청| G[스크립트 수정]
-    G --> F[부모용 학습 요약]
-    F --> H[END]
+    B --> C[리서치 오케스트레이터]
+    C --> D1[과학 사실 워커]
+    C --> D2[영어 단어 워커]
+    C --> D3[부모 팁 워커]
+    D1 --> E[어린이 과학영어 스크립트 생성]
+    D2 --> E
+    D3 --> E
+    E --> F[사용자 검토]
+    F -->|스크립트 확정| G[부모용 학습 요약]
+    F -->|수정 요청| H[스크립트 수정]
+    H --> G
+    G --> I[END]
 ```
 
 ### 현상태
-research_topic 노드는 science_fact_tool, vocabulary_tool, parent_tip_tool을 호출하므로 여러 개의 Tool들이 연동됨
-review_script 이후 사용자 검토로 Conditional Edge 사용
-6개의 노드를 구현
+- Prompt Chaining: 기획 → 리서치 → 스크립트 → 검토 → 요약 순서로 연결됨
+- Parallelization: 리서치 오케스트레이터가 3개의 워커 노드를 병렬로 실행함
+- Orchestrator-Workers: 오케스트레이터가 과학 사실, 영어 단어, 부모 팁 워커에 작업을 분배함
+- Conditional Edge: review_script 이후 승인/수정 요청에 따라 분기함
+- Tools: science_fact_tool, vocabulary_tool, parent_tip_tool 연동
