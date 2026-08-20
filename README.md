@@ -17,7 +17,7 @@ parent summaries, and optional single-narrator WAV audio.
 
 ## Demo
 
-![Little Science Spot Streamlit interface](docs/assets/little-science-spot-home.jpg)
+![Little Science Spot interactive demo](docs/assets/little-science-spot-demo.gif)
 
 # 어린이 과학 라디오 - 리틀사이언스팟
 
