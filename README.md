@@ -1,5 +1,7 @@
 # Little Science Spot
 
+[![Tests](https://github.com/hesshess/little-science-pod/actions/workflows/tests.yml/badge.svg)](https://github.com/hesshess/little-science-pod/actions/workflows/tests.yml)
+
 Little Science Spot is a Streamlit-based educational AI agent that turns a child's
 science question into a child-friendly Korean radio episode. It guides the user
 through topic confirmation, episode length selection, script review and revision,
