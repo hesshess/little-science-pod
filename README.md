@@ -1,3 +1,7 @@
+# Little Science Spot
+
+A Streamlit-based AI application that turns children's science questions into short Korean science radio scripts, parent summaries, and optional TTS audio.
+
 # 어린이 과학 라디오 - 리틀사이언스팟
 
 ## 목적:

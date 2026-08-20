@@ -1,7 +1,7 @@
 [project]
 name = "little-science-pod"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Streamlit-based AI application that creates kid-friendly Korean science radio scripts, parent summaries, and optional TTS audio."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
