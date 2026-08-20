@@ -10,6 +10,9 @@ wheels/
 # Virtual environments
 .venv/
 .env
+.env.*
+!.env.example
+.streamlit/secrets.toml
 
 # Jupyter
 .ipynb_checkpoints/

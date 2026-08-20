@@ -19,6 +19,36 @@ parent summaries, and optional single-narrator WAV audio.
 
 ![Little Science Spot interactive demo](docs/assets/little-science-spot-demo.gif)
 
+## Configuration
+
+Create a local environment file from the provided template:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Required | Default | Purpose |
+| --- | --- | --- | --- |
+| `OPENAI_API_KEY` | Yes | None | Generates scripts, summaries, revisions, and audio |
+| `OPENAI_TEXT_MODEL` | No | `gpt-4.1-mini` | Selects the OpenAI text model |
+| `ENABLE_TTS` | No | `0` | Enables TTS when set to `1` |
+
+Never commit `.env` or a real API key. For Streamlit Community Cloud, add the
+following TOML in **App settings → Secrets**:
+
+```toml
+OPENAI_API_KEY = "your_openai_api_key_here"
+OPENAI_TEXT_MODEL = "gpt-4.1-mini"
+ENABLE_TTS = "1"
+```
+
+Run the application locally:
+
+```bash
+uv sync
+uv run streamlit run main.py
+```
+
 # 어린이 과학 라디오 - 리틀사이언스팟
 
 ## 목적:
@@ -64,4 +94,7 @@ graph TD
 - TTS: `OPENAI_API_KEY`와 `ENABLE_TTS=1`이 함께 설정되면 박사님 단일 음성을 생성하고 `outputs/`에 wav 파일을 저장함
 
 ## 실행 방법
-- `uv run streamlit run main.py`
+
+1. `.env.example`을 `.env`로 복사하고 `OPENAI_API_KEY`를 설정합니다.
+2. 음성 생성이 필요하면 `ENABLE_TTS=1`로 변경합니다.
+3. `uv sync` 후 `uv run streamlit run main.py`를 실행합니다.
