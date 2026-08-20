@@ -1,6 +1,19 @@
 # Little Science Spot
 
-A Streamlit-based AI application that turns children's science questions into short Korean science radio scripts, parent summaries, and optional TTS audio.
+Little Science Spot is a Streamlit-based educational AI agent that turns a child's
+science question into a child-friendly Korean radio episode. It guides the user
+through topic confirmation, episode length selection, script review and revision,
+and optional text-to-speech generation.
+
+Built with LangGraph and OpenAI APIs, the application combines a routed workflow,
+parallel research tasks, input guardrails, and human-in-the-loop approval. The final
+approved script is used directly for audio generation so that the written and spoken
+episodes stay consistent.
+
+**Key capabilities:** Korean science script generation, user-guided revision,
+parent summaries, and optional single-narrator WAV audio.
+
+**Tech stack:** Python 3.13, LangGraph, OpenAI API, Streamlit, and uv.
 
 # 어린이 과학 라디오 - 리틀사이언스팟
 
