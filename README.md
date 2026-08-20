@@ -15,6 +15,10 @@ parent summaries, and optional single-narrator WAV audio.
 
 **Tech stack:** Python 3.13, LangGraph, OpenAI API, Streamlit, and uv.
 
+## Demo
+
+![Little Science Spot Streamlit interface](docs/assets/little-science-spot-home.jpg)
+
 # 어린이 과학 라디오 - 리틀사이언스팟
 
 ## 목적:
