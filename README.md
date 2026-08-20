@@ -21,6 +21,16 @@ parent summaries, and optional single-narrator WAV audio.
 
 ![Little Science Spot interactive demo](docs/assets/little-science-spot-demo.gif)
 
+## Example Episode
+
+**Topic:** Why do mosquito bites itch? (`왜 모기가 물면 간지럽나요?`)
+
+This sample pairs a generated, human-reviewed script with audio synthesized from
+the exact approved text.
+
+- [Read the complete Korean script](docs/examples/mosquito-itch-script.md)
+- [Listen to the narrated episode (MP3, 1:41)](docs/assets/mosquito-itch-example.mp3)
+
 ## Configuration
 
 Create a local environment file from the provided template:
