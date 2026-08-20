@@ -33,7 +33,10 @@ def topic_guardrail_message(topic: str) -> str | None:
     if normalized in TOO_BROAD_TOPICS:
         return f"`{normalized}`는 범위가 너무 넓어요. 한 번에 한 가지 질문으로 좁혀주세요. 예: `모기는 왜 사람을 물까요?`"
 
-    if any(separator in normalized for separator in [",", "/", "&", " 그리고 ", " 및 "]):
+    if any(
+        separator in normalized
+        for separator in [",", "/", "&", " 그리고 ", " 및 ", "와 ", "과 "]
+    ):
         return "한 번에 여러 주제를 넣기보다, 한 에피소드에는 질문 하나만 넣어주세요."
 
     if re.search(r"\b(여러 가지|아무거나|추천|아무 주제|과학 전반)\b", normalized):
